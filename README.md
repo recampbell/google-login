@@ -1,11 +1,13 @@
 google-login
 ============
 
-A Jenkins plugin which lets you login to Jenkins with your Google account.
+A Jenkins plugin which lets you login to Jenkins with your Google account. Also allows you to restrict access
+to accounts in a given Google Apps domain.
 
 
 To use this plugin, you must obtain OAuth 2.0 credentials
-    from the [Google Developers Console](https://console.developers.google.com)
+    from the [Google Developers Console](https://console.developers.google.com). These don't need to belong to a
+    special account, or even one associated with the domain you want to restrict logins to.
 
 Instructions to create the Client ID and Secret:
 
