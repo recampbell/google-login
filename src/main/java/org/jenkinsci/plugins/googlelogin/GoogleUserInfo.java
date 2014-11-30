@@ -101,7 +101,7 @@ public class GoogleUserInfo extends UserProperty {
 
         @Override
         public String getDisplayName() {
-            return "Google Profile Info";
+            return null;
         }
     }
 }
