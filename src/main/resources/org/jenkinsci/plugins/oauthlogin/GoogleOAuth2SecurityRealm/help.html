@@ -1,0 +1,16 @@
+<div>
+    Authenticate all users with Google OAuth 2.0. To use this plugin, you must obtain OAuth 2.0 credentials
+    from the <a href="https://console.developers.google.com/">Google Developers Console</a>.
+</div>
+ <div>
+     Steps:
+     <ol>
+         <li>Login to the <a href="https://console.developers.google.com/">Google Developers Console</a></li>
+         <li>Create a new project</li>
+         <li>Under APIs & Auth -> Credentials, Create a new Client ID</li>
+         <li>The application type should be "Web Application"</li>
+         <li>The authorized redirect URLs should contain ${JENKINS_ROOT_URL}/securityRealm/finishLogin</li>
+         <li>Enter the created Client Id and secret into the fields below.</li>
+     </ol>
+ </div>
+
