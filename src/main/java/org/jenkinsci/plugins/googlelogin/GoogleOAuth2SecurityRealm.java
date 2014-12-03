@@ -183,9 +183,10 @@ public class GoogleOAuth2SecurityRealm extends SecurityRealm {
                     HttpRequest request = requestFactory.buildGetRequest(url);
 
                     GoogleUserInfo info = request.execute().parseAs(GoogleUserInfo.class);
+                    GrantedAuthority[] authorities = new GrantedAuthority[]{SecurityRealm.AUTHENTICATED_AUTHORITY};
                     // logs this user in.
                     UsernamePasswordAuthenticationToken token =
-                            new UsernamePasswordAuthenticationToken(info.getEmail(), "", new GrantedAuthority[]{});
+                            new UsernamePasswordAuthenticationToken(info.getEmail(), "", authorities);
                     SecurityContextHolder.getContext().setAuthentication(token);
                     // update the user profile.
                     User u = User.get(token.getName());
