@@ -16,16 +16,15 @@
     <url>https://github.com/jenkinsci/google-login-plugin</url>
   </scm>
 
-  <project>
-    <url>https://wiki.jenkins-ci.org/display/JENKINS/Google+Login+Plugin</url>
-    <developers>
-      <developer>
-	<id>recampbell</id>
-	<name>Ryan Campbell</name>
-	<email>ryan.campbell@gmail.com</email>
-      </developer>
-    </developers>
-  </project>
+  <url>https://wiki.jenkins-ci.org/display/JENKINS/Google+Login+Plugin</url>
+
+  <developers>
+    <developer>
+      <id>recampbell</id>
+      <name>Ryan Campbell</name>
+      <email>ryan.campbell@gmail.com</email>
+    </developer>
+  </developers>
 
   <licenses>
     <license>
