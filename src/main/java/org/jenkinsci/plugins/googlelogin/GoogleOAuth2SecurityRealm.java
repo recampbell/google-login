@@ -101,7 +101,7 @@ public class GoogleOAuth2SecurityRealm extends SecurityRealm {
     @DataBoundConstructor
     public GoogleOAuth2SecurityRealm(String clientId, String clientSecret, String domain) throws IOException {
         this.clientId = clientId;
-        this.clientSecret = Secret.fromString(clientSecret);
+        this.clientSecret = Secret.fromString(clientSecret.trim());
         this.domain = Util.fixEmpty(domain);
     }
 
