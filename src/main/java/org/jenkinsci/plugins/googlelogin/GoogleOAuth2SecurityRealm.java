@@ -184,9 +184,16 @@ public class GoogleOAuth2SecurityRealm extends SecurityRealm {
 
                     GoogleUserInfo info = request.execute().parseAs(GoogleUserInfo.class);
                     GrantedAuthority[] authorities = new GrantedAuthority[]{SecurityRealm.AUTHENTICATED_AUTHORITY};
+
+                    String email = info.getEmail();
+                    String[] email_components = email.split("@", 2);
+                    if (domain != null && !domain.equals(email_components[1])) {
+                        return HttpResponses.error(500, "Google Apps domain verification failed.");
+                    }
+
                     // logs this user in.
                     UsernamePasswordAuthenticationToken token =
-                            new UsernamePasswordAuthenticationToken(info.getEmail(), "", authorities);
+                            new UsernamePasswordAuthenticationToken(email, "", authorities);
                     SecurityContextHolder.getContext().setAuthentication(token);
                     // update the user profile.
                     User u = User.get(token.getName());
